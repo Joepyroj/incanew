@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Inner Circle Asia</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="header-container">
+        <a href="/" class="logo-container">
+          <img src="/static/logo (2).png" alt="Inner Circle Asia Logo" />
+          <h1>INNER CIRCLE ASIA</h1>
+        </a>
+        <ul>
+          <li><a href="/">Beranda</a></li>
+          <li><a href="/konstruksi">Layanan Konstruksi</a></li>
+          <li><a href="/it-services">Layanan IT</a></li>
+          <li><a href="/contact" class="active">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="contact">
+        <div class="container contact-container" data-aos="fade-up">
+          <div class="contact-info">
+            <h1>Contact Us Now</h1>
+            <p>
+              Punya ide atau proyek? Kami siap membantu. Isi form di samping
+              atau hubungi kami melalui detail di bawah ini.
+            </p>
+            <ul class="contact-details">
+              <li>
+                <i class="fas fa-map-marker-alt"></i
+                ><span>Raya Gubeng 19-21, Gedung Graha SA lot 5-15</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i
+                ><a href="tel:+6285785559333">+62 857-8555-9333</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i
+                ><a href="mailto:info@innercircle.asia"
+                  >info@innercircle.asia</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-form">
+            <form id="contact-form">
+              <div class="form-grid">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+                <input type="text" name="company" placeholder="Your Company" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Your Phone Number"
+                />
+              </div>
+              <div class="services-interest">
+                <label>Layanan yang diminati:</label>
+                <div class="checkbox-group">
+                  <label
+                    ><input type="checkbox" name="service" value="Konstruksi" />
+                    Konstruksi</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="service"
+                      value="Web Development"
+                    />
+                    Web Development</label
+                  >
+                  <label
+                    ><input type="checkbox" name="service" value="Odoo ERP" />
+                    Odoo ERP</label
+                  >
+                  <label
+                    ><input type="checkbox" name="service" value="Networking" />
+                    Networking</label
+                  >
+                </div>
+              </div>
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="6"
+                required
+              ></textarea>
+
+              <div id="form-status" style="margin-top: 15px"></div>
+
+              <button type="submit" class="cta-button">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+
+      const form = document.getElementById("contact-form");
+      const formStatus = document.getElementById("form-status");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Mencegah form reload halaman
+
+        const formData = new FormData(form);
+        const button = form.querySelector('button[type="submit"]');
+        button.disabled = true;
+        button.textContent = "Sending...";
+        formStatus.innerHTML = "";
+
+        fetch("/send-message", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              formStatus.innerHTML = `<p style="color: green;">${data.message}</p>`;
+              form.reset();
+            } else {
+              formStatus.innerHTML = `<p style="color: red;">Error: ${data.message}</p>`;
+            }
+          })
+          .catch((error) => {
+            formStatus.innerHTML = `<p style="color: red;">Terjadi kesalahan jaringan. Silakan coba lagi.</p>`;
+          })
+          .finally(() => {
+            button.disabled = false;
+            button.textContent = "Send Message";
+          });
+      });
+    </script>
+  </body>
+</html>
