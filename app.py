@@ -1,6 +1,6 @@
 import os
 import requests
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, make_response
 
 app = Flask(__name__,
             static_url_path='/static', 
@@ -78,6 +78,11 @@ def send_message():
     except Exception as e:
         return jsonify({'success': False, 'message': f'Terjadi kesalahan: {e}'}), 500
 
+@app.route('/sitemap.xml')
+def sitemap():
+    response = make_response(render_template('sitemap.xml'))
+    response.headers['Content-Type'] = 'application/xml'
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
