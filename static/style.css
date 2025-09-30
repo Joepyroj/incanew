@@ -1,8 +1,15 @@
 /* static/css/style.css */
 
 /* == PENGATURAN DASAR & FONT == */
+
+/* ===========================================================
+   1. PENGATURAN DASAR & FONT
+   =========================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
+/* ===========================================================
+   2. VARIABEL WARNA & RESET
+   =========================================================== */
 :root {
   --primary-color: #0d6efd; /* Biru */
   --secondary-color: #0dcaf0; /* Cyan/Turquoise dari logo */
@@ -16,6 +23,9 @@
   box-sizing: border-box;
 }
 
+/* ===========================================================
+   3. BASE STYLES (Body, Typography)
+   =========================================================== */
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -24,6 +34,9 @@ body {
   line-height: 1.7;
 }
 
+/* ===========================================================
+   4. LAYOUT DASAR (Container)
+   =========================================================== */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -50,6 +63,10 @@ h3 {
 }
 
 /* == HEADER & NAVIGASI == */
+
+/* ===========================================================
+   5. HEADER & NAVIGASI
+   =========================================================== */
 header {
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -127,17 +144,31 @@ nav ul li a:hover::after {
 }
 
 /* == HERO SECTION (UMUM) == */
+
+/* ===========================================================
+   6. HERO SECTION
+   =========================================================== */
 .hero {
   padding: 80px 0;
   text-align: center;
 }
 
+/* ===========================================================
+   6. HERO SECTION
+   =========================================================== */
 .hero h1,
+
+/* ===========================================================
+   6. HERO SECTION
+   =========================================================== */
 .hero h2 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
+/* ===========================================================
+   6. HERO SECTION
+   =========================================================== */
 .hero p {
   font-size: 1.2rem;
   color: var(--grey-color);
@@ -146,6 +177,10 @@ nav ul li a:hover::after {
 }
 
 /* == HALAMAN UTAMA - KARTU LAYANAN == */
+
+/* ===========================================================
+   7. KARTU LAYANAN (Home Services)
+   =========================================================== */
 #services {
   padding: 80px 0;
   margin-bottom: 30px;
@@ -208,6 +243,9 @@ nav ul li a:hover::after {
   font-size: 2.5rem;
 }
 
+/* ===========================================================
+   8. LAYANAN IT / SERVICES GRID
+   =========================================================== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -268,6 +306,10 @@ nav ul li a:hover::after {
 }
 
 /* TECHNOLOGY SECTION */
+
+/* ===========================================================
+   9. TECHNOLOGY SECTION
+   =========================================================== */
 #technology {
   padding: 80px 0;
   background-color: #fff;
@@ -318,6 +360,10 @@ nav ul li a:hover::after {
 }
 
 /* == SECTION UMUM (ADVANTAGES, ABOUT, CTA) == */
+
+/* ===========================================================
+   10. ABOUT SECTION & ADVANTAGES
+   =========================================================== */
 .about-section,
 #advantages {
   padding: 80px 0;
@@ -435,6 +481,9 @@ nav ul li a:hover::after {
   text-align: center;
 }
 
+/* ===========================================================
+   11. CTA (Call To Action)
+   =========================================================== */
 #cta {
   padding: 80px 0;
   background-color: var(--dark-color);
@@ -442,6 +491,9 @@ nav ul li a:hover::after {
   text-align: center;
 }
 
+/* ===========================================================
+   11. CTA (Call To Action)
+   =========================================================== */
 #cta h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -472,6 +524,10 @@ nav ul li a:hover::after {
 }
 
 /* == HALAMAN KONTAK == */
+
+/* ===========================================================
+   12. KONTAK PAGE
+   =========================================================== */
 #contact {
   padding: 80px 0;
 }
@@ -629,11 +685,21 @@ nav ul li a:hover::after {
 /* == RESPONSIVE DESIGN == */
 
 /* TABLET (1024px and below) */
+
+/* ===========================================================
+   13. RESPONSIVE - TABLET
+   =========================================================== */
 @media (max-width: 1024px) {
+  /* ===========================================================
+   4. LAYOUT DASAR (Container)
+   =========================================================== */
   .container {
     padding: 0 15px;
   }
 
+  /* ===========================================================
+   8. LAYANAN IT / SERVICES GRID
+   =========================================================== */
   .services-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
@@ -681,19 +747,36 @@ nav ul li a:hover::after {
 }
 
 /* MOBILE (768px and below) */
+
+/* ===========================================================
+   14. RESPONSIVE - MOBILE
+   =========================================================== */
 @media (max-width: 768px) {
+  /* ===========================================================
+   4. LAYOUT DASAR (Container)
+   =========================================================== */
   .container {
     padding: 0 15px;
     width: 100%;
     max-width: 100%;
   }
 
+  /* ===========================================================
+   6. HERO SECTION
+   =========================================================== */
   .hero h1,
+
+/* ===========================================================
+   6. HERO SECTION
+   =========================================================== */
   .hero h2 {
     font-size: 2rem;
     padding: 0 10px;
   }
 
+  /* ===========================================================
+   6. HERO SECTION
+   =========================================================== */
   .hero p {
     padding: 0 10px;
   }
@@ -710,7 +793,7 @@ nav ul li a:hover::after {
 
   nav ul {
     gap: 15px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
   }
 
@@ -736,6 +819,10 @@ nav ul li a:hover::after {
   }
 
   /* SERVICES GRID - PERBAIKAN UTAMA */
+
+  /* ===========================================================
+   8. LAYANAN IT / SERVICES GRID
+   =========================================================== */
   .services-grid {
     grid-template-columns: 1fr; /* Hanya 1 kolom di mobile */
     gap: 20px;
@@ -811,15 +898,38 @@ nav ul li a:hover::after {
   }
 
   /* SECTION PADDING ADJUSTMENTS */
+
+  /* ===========================================================
+   7. KARTU LAYANAN (Home Services)
+   =========================================================== */
   #services,
+
+/* ===========================================================
+   10. ABOUT SECTION & ADVANTAGES
+   =========================================================== */
   .about-section,
   #advantages,
+
+/* ===========================================================
+   12. KONTAK PAGE
+   =========================================================== */
   #contact,
+
+/* ===========================================================
+   11. CTA (Call To Action)
+   =========================================================== */
   #cta,
+
+/* ===========================================================
+   9. TECHNOLOGY SECTION
+   =========================================================== */
   #technology {
     padding: 60px 0; /* Kurangi padding vertikal */
   }
 
+  /* ===========================================================
+   10. ABOUT SECTION & ADVANTAGES
+   =========================================================== */
   .about-section {
     padding: 60px 0;
   }
@@ -843,12 +953,18 @@ nav ul li a:hover::after {
     order: 1; /* Text di atas */
   }
 
+  /* ===========================================================
+   17. IMAGE CONTAINER (General Styles)
+   =========================================================== */
   .image-container {
     width: 100%;
     height: auto;
     min-height: 300px; /* Minimum height untuk foto */
   }
 
+  /* ===========================================================
+   17. IMAGE CONTAINER (General Styles)
+   =========================================================== */
   .image-container img {
     width: 100%;
     height: auto;
@@ -909,7 +1025,14 @@ nav ul li a:hover::after {
 }
 
 /* EXTRA SMALL MOBILE (480px and below) */
+
+/* ===========================================================
+   15. RESPONSIVE - EXTRA SMALL MOBILE
+   =========================================================== */
 @media (max-width: 480px) {
+  /* ===========================================================
+   4. LAYOUT DASAR (Container)
+   =========================================================== */
   .container {
     padding: 0 10px;
   }
@@ -927,7 +1050,14 @@ nav ul li a:hover::after {
     font-size: 0.85rem;
   }
 
+  /* ===========================================================
+   6. HERO SECTION
+   =========================================================== */
   .hero h1,
+
+/* ===========================================================
+   6. HERO SECTION
+   =========================================================== */
   .hero h2 {
     font-size: 1.8rem;
     padding: 0 5px;
@@ -943,8 +1073,15 @@ nav ul li a:hover::after {
   }
 
   nav ul {
-    gap: 10px;
-    font-size: 0.8rem;
+    gap: 6px; /* Jarak antar menu minimal */
+    justify-content: center;
+    flex-wrap: nowrap; /* Paksa dalam 1 baris */
+  }
+
+  nav ul li a {
+    font-size: 0.65rem; /* Font menu navigasi sangat kecil untuk muat 1 baris */
+    white-space: nowrap; /* Cegah text wrap */
+    padding: 4px 6px; /* Kurangi padding */
   }
 
   .project-title {
@@ -952,6 +1089,9 @@ nav ul li a:hover::after {
     padding: 30px 15px 15px 15px;
   }
 
+  /* ===========================================================
+   10. ABOUT SECTION & ADVANTAGES
+   =========================================================== */
   .about-section {
     padding: 50px 0;
   }
@@ -964,10 +1104,16 @@ nav ul li a:hover::after {
     max-width: 100%; /* Full width di layar kecil */
   }
 
+  /* ===========================================================
+   17. IMAGE CONTAINER (General Styles)
+   =========================================================== */
   .image-container {
     min-height: 250px;
   }
 
+  /* ===========================================================
+   17. IMAGE CONTAINER (General Styles)
+   =========================================================== */
   .image-container img {
     min-height: 250px;
   }
@@ -1005,20 +1151,35 @@ nav ul li a:hover::after {
   }
 }
 
+/* ===========================================================
+   14. RESPONSIVE - MOBILE
+   =========================================================== */
 @media (max-width: 768px) and (orientation: landscape) {
+  /* ===========================================================
+   10. ABOUT SECTION & ADVANTAGES
+   =========================================================== */
   .about-section {
     padding: 40px 0;
   }
 
+  /* ===========================================================
+   17. IMAGE CONTAINER (General Styles)
+   =========================================================== */
   .image-container {
     min-height: 200px;
   }
 
+  /* ===========================================================
+   17. IMAGE CONTAINER (General Styles)
+   =========================================================== */
   .image-container img {
     min-height: 200px;
   }
 }
 
+/* ===========================================================
+   16. FOOTER
+   =========================================================== */
 #main-footer {
   background-color: var(--dark-color);
   color: #ccc;
@@ -1111,6 +1272,10 @@ nav ul li a:hover::after {
 }
 
 /* Responsive Footer */
+
+/* ===========================================================
+   14. RESPONSIVE - MOBILE
+   =========================================================== */
 @media (max-width: 768px) {
   .footer-container {
     text-align: center;
@@ -1124,6 +1289,9 @@ nav ul li a:hover::after {
   }
 }
 
+/* ===========================================================
+   17. IMAGE CONTAINER (General Styles)
+   =========================================================== */
 .image-container {
   position: relative;
   border-radius: 15px;
@@ -1132,6 +1300,9 @@ nav ul li a:hover::after {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
+/* ===========================================================
+   17. IMAGE CONTAINER (General Styles)
+   =========================================================== */
 .image-container img {
   width: 100%;
   height: auto;
@@ -1140,6 +1311,9 @@ nav ul li a:hover::after {
   transition: transform 0.3s ease;
 }
 
+/* ===========================================================
+   17. IMAGE CONTAINER (General Styles)
+   =========================================================== */
 .image-container:hover img {
   transform: scale(1.05);
 }
