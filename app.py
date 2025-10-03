@@ -84,5 +84,9 @@ def sitemap():
     response.headers['Content-Type'] = 'application/xml'
     return response
 
+@app.route('/google26acacd79d991b12.html')
+def google_verification():
+    return app.send_static_file('google26acacd79d991b12.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
