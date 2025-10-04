@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link rel="stylesheet" href="/static/style.css" />
-    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-7X73L8SGG0"
@@ -32,15 +31,15 @@
   <body>
     <header>
       <nav class="header-container">
-        <a href="index.html" class="logo-container">
+        <a href="/" class="logo-container">
           <img src="/static/logo (2).png" alt="Inner Circle Asia Logo" />
           <h1>INNER CIRCLE ASIA</h1>
         </a>
         <ul>
           <li><a href="/">Beranda</a></li>
           <li><a href="/konstruksi">Layanan Konstruksi</a></li>
-          <li><a href="/it-services">Layanan IT</a></li>
-          <li><a href="/contact" class="active">Kontak</a></li>
+          <li><a href="/it-services" class="active">Layanan IT</a></li>
+          <li><a href="/contact">Kontak</a></li>
         </ul>
       </nav>
     </header>
@@ -57,7 +56,7 @@
         </div>
       </section>
 
-      <section id="services">
+      <section id="services-it">
         <div class="container">
           <h2 class="section-title" data-aos="fade-up">Layanan Utama Kami</h2>
           <div class="services-grid">
@@ -219,8 +218,6 @@
       });
 
       // --- KODE BARU UNTUK FITUR EXPAND/COLLAPSE ---
-
-      // Ambil semua elemen yang kita butuhkan
       const toggleButtons = document.querySelectorAll(
         ".toggle-portfolio-details"
       );
@@ -228,70 +225,66 @@
         "service-details-container"
       );
 
-      // Data untuk kartu detail (sesuai gambar Anda)
+      // Data untuk kartu detail (PERBAIKAN PATH GAMBAR DI SINI)
       const portfolioDetails = `
     <div class="details-grid" data-aos="fade-up">
         <div class="detail-item">
-            <img src="{{ url_for('static', filename='ecommerce.png') }}" alt="E-commerce Icon">
+            <img src="/static/ecommerce.png" alt="E-commerce Icon">
             <h4>E-commerce Integration</h4>
             <p>Website e-commerce yang terintegrasi penuh dengan inventory, payment gateway, shipping, dan customer service.</p>
         </div>
         <div class="detail-item">
-            <img src="{{ url_for('static', filename='manufacturing.png') }}" alt="Manufacturing Icon">
+            <img src="/static/manufacturing.png" alt="Manufacturing Icon">
             <h4>Manufacturing</h4>
             <p>Manajemen produksi dari planning hingga quality control dengan Bill of Materials (BOM) dan work order tracking.</p>
         </div>
         <div class="detail-item">
-            <img src="{{ url_for('static', filename='hr.png') }}" alt="HR & Payroll Icon">
+            <img src="/static/hr.png" alt="HR & Payroll Icon">
             <h4>HR & Payroll</h4>
             <p>Sistem HR lengkap dengan employee management, attendance tracking, leave management, dan payroll otomatis.</p>
         </div>
         <div class="detail-item">
-            <img src="{{ url_for('static', filename='inventory.png') }}" alt="Inventory Icon">
+            <img src="/static/inventory.png" alt="Inventory Icon">
             <h4>Inventory Management</h4>
             <p>Kelola stok, tracking barang, dan optimasi inventory dengan sistem forecasting otomatis yang akurat dan real-time reporting.</p>
         </div>
         <div class="detail-item">
-            <img src="{{ url_for('static', filename='sales.png') }}" alt="Sales Icon">
+            <img src="/static/sales.png" alt="Sales Icon">
             <h4>Sales & CRM</h4>
             <p>Pipeline penjualan terintegrasi dengan customer management, lead tracking, dan automated follow-up untuk meningkatkan konversi.</p>
         </div>
         <div class="detail-item">
-            <img src="{{ url_for('static', filename='accounting.png') }}" alt="Accounting Icon">
+            <img src="/static/accounting.png" alt="Accounting Icon">
             <h4>Accounting & Finance</h4>
             <p>Sistem akuntansi lengkap dengan invoicing otomatis, payment tracking, financial reporting, dan tax management.</p>
         </div>
         <div class="detail-item">
-            <img src="{{ url_for('static', filename='bi.png') }}" alt="Business Intelligence Icon">
+            <img src="/static/bi.png" alt="Business Intelligence Icon">
             <h4>Business Intelligence</h4>
             <p>Dashboard analitik real-time dengan custom reporting, KPI tracking, dan predictive analytics untuk decision making.</p>
         </div>
         <div class="detail-item">
-            <img src="{{ url_for('static', filename='custom-dev.png') }}" alt="Custom Development Icon">
+            <img src="/static/custom-dev.png" alt="Custom Development Icon">
             <h4>Custom Development</h4>
             <p>Pengembangan modul khusus, customization workflow, dan integrasi dengan sistem existing sesuai kebutuhan bisnis.</p>
         </div>
         <div class="detail-item">
-            <img src="{{ url_for('static', filename='support.png') }}" alt="Support Icon">
+            <img src="/static/support.png" alt="Support Icon">
             <h4>Support & Maintenance</h4>
             <p>Layanan maintenance berkelanjutan, update sistem, backup otomatis, dan technical support 24/7.</p>
         </div>
     </div>
 `;
 
-      // Fungsi untuk menampilkan atau menyembunyikan detail
       function toggleDetails() {
-        // Cek apakah kontainer sudah terisi
         if (detailsContainer.classList.contains("active")) {
-          detailsContainer.innerHTML = ""; // Kosongkan
+          detailsContainer.innerHTML = "";
           detailsContainer.style.display = "none";
           detailsContainer.classList.remove("active");
         } else {
-          // Jika kosong, isi dengan data dan tampilkan
           detailsContainer.innerHTML = portfolioDetails;
           detailsContainer.style.display = "block";
           detailsContainer.classList.add("active");
-          // Scroll ke bagian detail agar terlihat
           detailsContainer.scrollIntoView({
             behavior: "smooth",
             block: "start",
@@ -299,16 +292,9 @@
         }
       }
 
-      // Tambahkan event listener ke setiap tombol
       toggleButtons.forEach((button) => {
         button.addEventListener("click", toggleDetails);
       });
-
-      // Bonus: Fungsionalitas yang sama untuk kartu Odoo ERP
-      const odooServiceItem = document.getElementById("odoo-service-item");
-      if (odooServiceItem) {
-        odooServiceItem.addEventListener("click", toggleDetails);
-      }
     </script>
   </body>
 </html>
