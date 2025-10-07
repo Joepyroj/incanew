@@ -84,6 +84,13 @@ def sitemap():
     response.headers['Content-Type'] = 'application/xml'
     return response
 
+@app.route('/robots.txt')
+def robots():
+    """Route untuk robots.txt"""
+    response = make_response(render_template('robots.txt'))
+    response.headers['Content-Type'] = 'text/plain'
+    return response
+
 @app.route('/google26acacd79d991b12.html')
 def google_verification():
     return app.send_static_file('google26acacd79d991b12.html')

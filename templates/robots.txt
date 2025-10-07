@@ -1,0 +1,15 @@
+# robots.txt untuk Inner Circle Asia
+User-agent: *
+Allow: /
+Disallow: /static/
+
+# Sitemap
+Sitemap: https://innercircleasia.com/sitemap.xml
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
