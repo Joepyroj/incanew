@@ -486,7 +486,6 @@ nav ul li a:hover::after {
   display: none;
   margin-top: 60px;
   padding-top: 60px;
-  border-top: 1px solid #e9ecef;
 }
 
 .details-container .details-grid {
